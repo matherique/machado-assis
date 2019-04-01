@@ -8,8 +8,8 @@ import requests
 # baixando o arquivo em formato pdf e salvando na pasta
 def downloadfile(link, name, folder):
     r = requests.get(link, allow_redirects=True)
-    open('download/{}/{}.pdf'.format(folder, name), 'wb').write(r.content)
-    print("download finished - download/{}/{}.pdf".format(folder, name))
+    open('../download/{}/{}.pdf'.format(folder, name), 'wb').write(r.content)
+    print("download finished - ../download/{}/{}.pdf".format(folder, name))
 
 # pegando dados do json com os links 
 def getdados():
