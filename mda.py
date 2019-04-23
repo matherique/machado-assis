@@ -11,7 +11,7 @@ token = TweetTokenizer(strip_handles=True, reduce_len=True)
 obras = glob.glob('obras/*.txt')
 palavras = []
 
-def addtokenpontuacao(text):
+def addtoken(text):
     lp = token.tokenize(text)
     pontuacoes = json.loads(open('tokens.json','r').read())
     
@@ -24,8 +24,6 @@ def addtokenpontuacao(text):
 # tokeninzando palavras
 for obra in obras:
     texto = open(obra, 'r').read().lower().replace("\n", " ")
-    palavras += addtokenpontuacao(texto)
+    palavras += addtoken(texto)
 
-
-
-print(palavras)
+print("Quantidade de palavras: {}".format(len(palavras)))
